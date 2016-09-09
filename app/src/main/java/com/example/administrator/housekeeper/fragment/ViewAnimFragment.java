@@ -20,10 +20,10 @@ public class ViewAnimFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_picture, null);
-        final ImageView iv_hzw = (ImageView) view.findViewById(R.id.iv_a1);
+        final ImageView imageView = (ImageView) view.findViewById(R.id.iv_a1);
 
         Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.set_anim);
-        iv_hzw.startAnimation(animation);
+        imageView.startAnimation(animation);
 
 //        iv_hzw.setAnimation(animation);
 //        animation.start();

@@ -18,17 +18,18 @@ import com.example.administrator.housekeeper.R;
 /**
  * Created by Administrator on 2016/9/9.
  */
-public class ObjectAnimatorFragment extends Fragment
+public class ObjectAnimatorFragment extends Fragment//导v4包
 {
-    @TargetApi(Build.VERSION_CODES.M)
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_picture,null);
-        ImageView imageView = (ImageView) view.findViewById(R.id.iv_a1);
+        View view = inflater.inflate(R.layout.activity_picture,null);//渲染器，返回view
+        ImageView imageView = (ImageView) view.findViewById(R.id.iv_a1);//找到指定图片
+        //动画设置，动画渲染来自动画（上下文，动画设置）
         AnimatorSet animatorSet = (AnimatorSet) AnimatorInflater.loadAnimator(getContext(),R.animator.property_animator);
-        animatorSet.setTarget(imageView);
-        animatorSet.start();
+        animatorSet.setTarget(imageView);//动画加载图片
+        animatorSet.start();//开始
         return  view;
     }
 }
