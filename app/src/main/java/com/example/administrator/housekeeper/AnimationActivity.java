@@ -7,19 +7,22 @@ import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
+import com.example.administrator.housekeeper.fragment.ObjectAnimatorFragment;
+
 /**
  * Created by Administrator on 2016/9/9.
  */
-public class AnimatorActivity extends AppCompatActivity {
+public class AnimationActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
-        setContentView(R.layout.activity_animator);
-        ImageView imageView = (ImageView) findViewById(R.id.iv_a1);
+        setContentView(R.layout.frament);
+      /*  ImageView imageView = (ImageView) findViewById(R.id.iv_a1);
        AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(this,
                 R.animator.property_animator);
         set.setTarget(imageView);
-        set.start();
-
+        set.start();*/
+       // ObjectAnimatorFragment oafragment = new ObjectAnimatorFragment();
+       getSupportFragmentManager().beginTransaction().add(R.id.fm , new ObjectAnimatorFragment()).commit();
     }
 }
