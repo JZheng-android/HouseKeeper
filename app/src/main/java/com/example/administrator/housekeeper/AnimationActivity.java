@@ -23,6 +23,7 @@ public class AnimationActivity extends AppCompatActivity {
         set.setTarget(imageView);
         set.start();*/
        // ObjectAnimatorFragment oafragment = new ObjectAnimatorFragment();
-       getSupportFragmentManager().beginTransaction().add(R.id.fm , new ObjectAnimatorFragment()).commit();
+       getSupportFragmentManager().beginTransaction().
+               add(R.id.fm,new ObjectAnimatorFragment());
     }
 }
