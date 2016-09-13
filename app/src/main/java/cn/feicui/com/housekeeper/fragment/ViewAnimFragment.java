@@ -20,6 +20,7 @@ public class ViewAnimFragment extends Fragment {
 
     @Nullable
     @Override
+    //重写onCreateView方法
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.view_anim_view, null);
         final ImageView iv_hzw = (ImageView) view.findViewById(R.id.iv_hzw);

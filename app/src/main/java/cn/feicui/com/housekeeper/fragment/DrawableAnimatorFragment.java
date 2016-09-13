@@ -48,6 +48,14 @@ public class DrawableAnimatorFragment extends Fragment {
                     }
                 }
         );
+        view.findViewById(R.id.btn_stop).setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        animation.stop();
+                    }
+                }
+        );
 
         return view ;
     }
