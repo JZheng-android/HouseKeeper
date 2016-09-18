@@ -1,0 +1,20 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="MyLargeWhiteTextStyle">
+        <!--修改文字的大小-->
+        <item name="android:textSize">30sp</item>
+        <!--引用项目的资源，以@符号打头-->
+        <!--文字的颜色-->
+        <item name="android:textColor">@color/colorWhite</item>
+        <!--背景颜色-->
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+</resources>
