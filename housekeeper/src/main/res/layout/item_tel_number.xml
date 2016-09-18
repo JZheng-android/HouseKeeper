@@ -8,7 +8,7 @@
     <TextView
         android:textSize="26sp"
         android:text="一站通话平台"
-        android:id="@+id/itc_tv"
+        android:id="@+id/itn_tv"
         android:layout_width="match_parent"
         android:drawableRight="@mipmap/ic_launcher"
         android:padding="@dimen/activity_horizontal_margin"

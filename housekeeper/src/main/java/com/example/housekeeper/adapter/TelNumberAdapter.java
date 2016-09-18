@@ -15,11 +15,11 @@ import java.util.ArrayList;
 /**
  * Created by Administrator on 2016/9/18.
  */
-public class TelClassAdapter extends BaseAdapter {
+public class TelNumberAdapter extends BaseAdapter {
 
     private final ArrayList<TelClassInfo> telClassInfos;
     private final LayoutInflater inflater;
-    public TelClassAdapter(Context context, ArrayList<TelClassInfo> telClassInfos){
+    public TelNumberAdapter(Context context, ArrayList<TelClassInfo> telClassInfos){
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.telClassInfos = telClassInfos;
     }
@@ -35,7 +35,7 @@ public class TelClassAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return position ;
+        return position;
     }
 
     @Override
