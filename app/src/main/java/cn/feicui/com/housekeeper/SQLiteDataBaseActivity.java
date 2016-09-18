@@ -1,20 +1,21 @@
-package cn.feicui.com.housekeeper;
 
-import android.content.ContentValues;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.text.Editable;
-import android.util.Log;
-import android.view.View;
-import android.widget.EditText;
+        package cn.feicui.com.housekeeper;
 
-import cn.feicui.com.housekeeper.DataBase.MySQLiteOpenHelper;
-import cn.feicui.com.housekeeper.DataBase.PersonContract;
-import cn.feicui.com.housekeeper.entity.People;
+        import android.content.ContentValues;
+        import android.database.Cursor;
+        import android.database.sqlite.SQLiteDatabase;
+        import android.support.v7.app.AppCompatActivity;
+        import android.os.Bundle;
+        import android.text.Editable;
+        import android.util.Log;
+        import android.view.View;
+        import android.widget.EditText;
 
-public class SQLiteDatabaseActivity extends AppCompatActivity {
+        import cn.feicui.com.housekeeper.DataBase.MySQLiteOpenHelper;
+        import cn.feicui.com.housekeeper.DataBase.PersonContract;
+        import cn.feicui.com.housekeeper.entity.People;
+
+public class SQLiteDataBaseActivity extends AppCompatActivity {
     private static final String TAG = "SQLiteDatabaseActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,18 +25,23 @@ public class SQLiteDatabaseActivity extends AppCompatActivity {
         final EditText et_name = (EditText) findViewById(R.id.et_name);
         final EditText et_class = (EditText) findViewById(R.id.et_class);
         MyApplication myApplication = (MyApplication) getApplication();
-        final SQLiteDatabase database =myApplication.mySQLiteOpenHelper.getWritableDatabase();
+        final SQLiteDatabase database
+                =myApplication.mySQLiteOpenHelper.getWritableDatabase();
         findViewById(R.id.save).setOnClickListener(new View.OnClickListener() {
             //保存数据
             @Override
             public void onClick(View v) {
                 ContentValues contentValues = new ContentValues();
                 //将PersonContract.PersonEntry.COLUMNS_ID与et_id中的值相对应。
-                contentValues.put(PersonContract.PersonEntry.COLUMNS_ID,et_id.getText().toString());
-                contentValues.put(PersonContract.PersonEntry.COLUMNS_NAME,et_name.getText().toString());
-                contentValues.put(PersonContract.PersonEntry.COLUMNS_CLASS,et_class.getText().toString());
+                contentValues.put(PersonContract.PersonEntry.COLUMNS_ID,et_id.getText
+                        ().toString());
+                contentValues.put(PersonContract.PersonEntry.COLUMNS_NAME,et_name.getText
+                        ().toString());
+                contentValues.put
+                        (PersonContract.PersonEntry.COLUMNS_CLASS,et_class.getText().toString());
                 //表的名字
-                long insert = database.insert(PersonContract.PersonEntry.TABLE_NAME, null, contentValues);
+                long insert = database.insert(PersonContract.PersonEntry.TABLE_NAME, null,
+                        contentValues);
                 Log.d(TAG, "insert"+insert);
             }
         });
@@ -62,9 +68,12 @@ public class SQLiteDatabaseActivity extends AppCompatActivity {
                 Log.d(TAG,"count:"+count);
                 while (cursor.moveToNext()){
                     People poople = new People();
-                    String id = cursor.getString(cursor.getColumnIndex(PersonContract.PersonEntry.COLUMNS_ID));
-                    String name = cursor.getString(cursor.getColumnIndex(PersonContract.PersonEntry.COLUMNS_NAME));
-                    String clazz = cursor.getString(cursor.getColumnIndex(PersonContract.PersonEntry.COLUMNS_CLASS));
+                    String id = cursor.getString(cursor.getColumnIndex
+                            (PersonContract.PersonEntry.COLUMNS_ID));
+                    String name = cursor.getString(cursor.getColumnIndex
+                            (PersonContract.PersonEntry.COLUMNS_NAME));
+                    String clazz = cursor.getString(cursor.getColumnIndex
+                            (PersonContract.PersonEntry.COLUMNS_CLASS));
                     et_name.setText(name);
                     et_id.setText(id);
                     et_class.setText(clazz);
